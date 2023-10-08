@@ -1,3 +1,4 @@
+<!-- breaking bad -->
 <!DOCTYPE html>
 
 <html>
@@ -22,6 +23,27 @@
 </form>
 
     <div id="result"></div>
+    <script>
+
+        document.getElementById("currencyConversionForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+
+            const usdAmount = parseFloat(document.getElementById("usdAmount").value);
+
+            const conversionRate =3456.49;
+
+            const mntAmount = usdAmount * conversionRate;
+
+            document.getElementById("result").innerHTML = `
+
+                ${usdAmount} USD бол ${mntAmount.toFixed(2)} MNT
+
+            `;
+
+        });
+
+</script>
 
 
                 </body>
