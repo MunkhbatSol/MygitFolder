@@ -3,7 +3,8 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-image: url(back.jpg);
+  background-image: url(1318485.png);
+  background-size: cover;
 }
 
 body {
@@ -18,7 +19,7 @@ body {
 }
 
 h1 {
-  color: rgb(0, 0, 0);
+  color: rgb(21, 243, 121);
   font-size: 3rem;
   font-style: italic;
 }
@@ -67,7 +68,7 @@ select {
   margin: 0 20px;
   outline: 0;
   color: #00539cff;
-  border: 4px solid rgb(0, 0, 0);
+  border: 4px solid rgb(73, 231, 11);
 }
 
 #exchange:active,
@@ -83,7 +84,7 @@ button:active {
 }
 
 span {
-  color: #ffd662ff;
+  color: rgb(33, 228, 26);
 
   font-size: 35px;
 }
