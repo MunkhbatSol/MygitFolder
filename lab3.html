@@ -1,10 +1,11 @@
-<!-- breaking bad -->
+
 <!DOCTYPE html>
 
 <html>
 
 <head>
     <title>Доллараас төгрөгт шилжүүлэгч</title>
+ 
 </head>
 
                 <body
@@ -29,11 +30,11 @@
             event.preventDefault();
 
 
-            const usdAmount = parseFloat(document.getElementById("usdAmount").value);
+            var usdAmount = parseFloat(document.getElementById("usdAmount").value);
 
-            const conversionRate =3456.49;
+            var conversionRate =3456.49;
 
-            const mntAmount = usdAmount * conversionRate;
+            var mntAmount = usdAmount * conversionRate;
 
             document.getElementById("result").innerHTML = `
 
