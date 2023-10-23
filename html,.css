@@ -6,3 +6,13 @@ body {
   background-image: url(1318485.png);
   background-size: cover;
 }
+body {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top:60px;
+  }
