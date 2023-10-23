@@ -71,3 +71,18 @@ body {
   button:active {
   transform: scale(0.7);
 }
+#output-text {
+    display: none;
+    padding: 20px;
+    font-size: 30px;
+    color: #ffffff;
+  }
+   
+  span {
+    color: rgb(33, 228, 26);
+   
+    font-size: 35px;
+  }
+   
+  #exchange-rate {
+    cursor: default;
