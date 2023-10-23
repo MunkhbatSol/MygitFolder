@@ -31,3 +31,6 @@ function calculate() {
       output_amount.style.display = "block";
     });
 }
+document.getElementById("exchange_button").addEventListener("click", () => {
+    calculate();
+  });
