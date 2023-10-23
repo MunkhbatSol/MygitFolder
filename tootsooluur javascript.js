@@ -14,3 +14,7 @@ exchange.addEventListener("click", () => {
     ];
     calculate();
   });
+  var to_amount = 0;
+function calculate() {
+  const from_currency_value = from_currency.value;
+  const to_currency_value = to_currency.value;
