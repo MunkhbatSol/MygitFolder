@@ -86,3 +86,17 @@ body {
    
   #exchange-rate {
     cursor: default;
+  }
+  
+  footer {
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+  }
+   
+  a {
+    color: #ffffff;
+    bottom: 0;
+    font-size: 30px;
+    text-decoration: none;
+  }
