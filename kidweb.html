@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Shapes Adventure</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+
+<body>
+
+    <!-- Welcome Screen -->
+    <div id="welcome-screen">
+        <h1>Fun Shapes Adventure</h1>
+        <img src="welcome-character.gif" alt="Friendly Character">
+        <p>Click or press the spacebar to begin!</p>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" style="display: none;">
+        <div id="shapes">
+            <img id="circle" src="circle.png" alt="Circle">
+            <img id="square" src="square.png" alt="Square">
+            <img id="triangle" src="triangle.png" alt="Triangle">
+        </div>
+        <p id="instructions">Click on the shape's friend to help them!</p>
+    </div>
+
+    <!-- Success Screen -->
+    <div id="success-screen" style="display: none;">
+        <p>Congratulations! You did it! Well done!</p>
+        <p id="play-again">Press 'R' or click to play again!</p>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+
+</body>
+
+</html>
