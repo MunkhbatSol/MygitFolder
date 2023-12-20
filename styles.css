@@ -4,7 +4,6 @@ body {
     padding: 0;
 }
 
-/* Welcome Screen Styles */
 #welcome-screen {
     text-align: center;
     padding: 20px;
@@ -19,7 +18,6 @@ body {
     width: 150px;
 }
 
-/* Game Screen Styles */
 #game-screen {
     display: flex;
     flex-direction: column;
@@ -27,7 +25,6 @@ body {
     text-align: center;
     padding: 20px;
 }
-
 #shapes {
     display: flex;
     gap: 20px;
@@ -43,7 +40,6 @@ body {
     color: #333;
 }
 
-/* Success Screen Styles */
 #success-screen {
     text-align: center;
     padding: 20px;
@@ -61,12 +57,10 @@ body {
     cursor: pointer;
 }
 
-/* General Styles */
 p {
     margin: 0;
 }
 
-/* Responsive Styles */
 @media only screen and (max-width: 600px) {
     #shapes {
         flex-direction: column;
