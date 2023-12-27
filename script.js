@@ -1,69 +1,56 @@
-document.addEventListener("DOMContentLoaded", function () {
-   
-    const welcomeScreen = document.getElementById("welcome-screen");
-    const gameScreen = document.getElementById("game-screen");
-    const successScreen = document.getElementById("success-screen");
+document.addEventListener('DOMContentLoaded', function () {
+    // Elements
+    var welcomeScreen = document.getElementById('welcome-screen');
+    var gameScreen = document.getElementById('game-screen');
+    var successScreen = document.getElementById('success-screen');
+    var shapesContainer = document.getElementById('shapes');
+    var instructions = document.getElementById('instructions');
+    var successMessage = document.getElementById('success-message');
 
-    // Тоглоомын элемэнтүүд
-    const shapes = document.getElementById("shapes");
-    const circle = document.getElementById("circle");
-    const square = document.getElementById("square");
-    const triangle = document.getElementById("triangle");
-    const instructions = document.getElementById("instructions");
+    // Shapes
+    var shapes = ['circle', 'square', 'triangle'];
 
+    // Event listener for the "Start Game" button
+    document.getElementById('start-button').addEventListener('click', startGame);
 
-    const playAgain = document.getElementById("play-again");
+    // Event listeners for shape clicks
+    shapesContainer.addEventListener('click', function (event) {
+        if (event.target.tagName === 'IMG') {
+            checkAnswer(event.target.id);
+        }
+    });
 
-    welcomeScreen.addEventListener("click", startGame);
-    playAgain.addEventListener("click", resetGame);
-
+    // Function to start the game
     function startGame() {
-        welcomeScreen.style.display = "none";
-        gameScreen.style.display = "flex";
-        addShapeClickHandlers();
+        // Show the game screen and hide others
+        welcomeScreen.style.display = 'none';
+        gameScreen.style.display = 'block';
+        successScreen.style.display = 'none';
+
+        // Generate a random shape
+        var randomShape = shapes[Math.floor(Math.random() * shapes.length)];
+
+        // Set the correct shape as a data attribute
+        shapesContainer.setAttribute('data-correct-shape', randomShape);
+
+        // Update instructions
+        instructions.innerHTML = 'Найздаа ' + randomShape + ' олж өгөөрэй';
     }
 
-    function addShapeClickHandlers() {
-        circle.addEventListener("click", handleShapeClick);
-        square.addEventListener("click", handleShapeClick);
-        triangle.addEventListener("click", handleShapeClick);
-    }
+    // Function to check the clicked shape
+    function checkAnswer(clickedShape) {
+        // Get the correct shape from the data attribute
+        var correctShape = shapesContainer.getAttribute('data-correct-shape');
 
-    function handleShapeClick(event) {
-        const clickedShape = event.target;
-
-        if (isCorrectFriend(clickedShape)) {
-            clickedShape.classList.add("found-friend");
-            checkGameCompletion();
+        // Check if the clicked shape is correct
+        if (clickedShape === correctShape) {
+            // Show success screen
+            gameScreen.style.display = 'none';
+            successScreen.style.display = 'block';
+            successMessage.innerHTML = 'Баяр хүргэе найзаа зөв дүрсийг оллоо!';
         } else {
- 
-            instructions.textContent = "Oops!дахиад оролдоорой!";
+            // Provide feedback for incorrect answer (optional)
+            alert('Буруу байна. Дахин оролдоно уу!');
         }
-    }
-
-
-    function isCorrectFriend(clickedShape) {
-        const correctFriend = shapes.querySelector(`#${clickedShape.id}`);
-        return correctFriend;
-    }
-
-    function checkGameCompletion() {
-        const foundFriends = document.querySelectorAll(".found-friend");
-        if (foundFriends.length === 3) {
-            gameScreen.style.display = "none";
-            successScreen.style.display = "block";
-        }
-    }
-
-    function resetGame() {
-        successScreen.style.display = "none";
-        welcomeScreen.style.display = "block";
-        const allShapes = document.querySelectorAll("#shapes img");
-        allShapes.forEach(shape => {
-            shape.classList.remove("found-friend");
-        });
-
-
-        instructions.textContent = "Click on the shape's friend to help them!";
     }
 });
